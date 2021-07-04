@@ -37,12 +37,20 @@ class Login extends Component {
         let dummyPassword = "july2021";
         let accessToken = "IGQVJXeTBWZAURlUXFQZAEpxRlQ5THNpeVN1c1FpMUc2cVZAEQk5NNnhfNXFFSXBBSEpOUDYwZAmllcEM4dGpJWjJmczZAZAZAUtTVUFXamlBUDk5SVlGMmJrYThkQ2UwZAUx6Y0ZABRDVkOGV5RFpaR3IwTU82aWdLMzhCbDd1b1V3";
 
-        this.state.loginUsername === "" ? this.setState({ loginUsernameRequired: "yes" }) : this.setState({ loginUsernameRequired: "no" });
-        this.state.loginPassword === "" ? this.setState({ loginPasswordRequired: "yes" }) : this.setState({ loginPasswordRequired: "no" });
+         
+        if (this.state.loginUsername === "" && this.state.loginPassword === "") {
+            this.setState({ loginUsernameRequired: "yes" });
+            this.setState({ loginPasswordRequired: "yes" })
+            this.setState({ username_password_incorrect: "no" });
+        }
+        else {
+            this.setState({ loginUsernameRequired: "no" });
+            this.setState({ loginPasswordRequired: "no" });
+        }
 
         if (this.state.loginUsername === dummyUsername && this.state.loginPassword === dummyPassword) {
-          window.sessionStorage.setItem("access-token",accessToken); /* save access-token in session storage */
-          this.props.history.replace("/home"); /* redirect To Home Page */
+            window.sessionStorage.setItem("access-token",accessToken); /* save access-token in session storage */
+            this.props.history.replace("/home"); /* redirect To Home Page */
         } 
         else {
           if (this.state.loginUsername !== "" && this.state.loginPassword !== "") {
