@@ -1,0 +1,39 @@
+.card-section {
+    margin-top: 20px;
+    display: flex;
+	justify-content: center;
+}
+
+.login-card {
+	width: 350px;
+    padding: 20px;
+	text-align: left;
+}
+
+.card-content {
+    padding: 16px;
+}
+
+.form-control {
+    width: 95%;
+}
+
+.heading {
+    margin-top: 0;
+}
+
+.login-button {
+    hover: pointer;
+}
+
+.no {
+    display: none;
+}
+
+.yes {
+    display: block;
+}
+
+.style {
+    color: red;
+}
